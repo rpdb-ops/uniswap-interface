@@ -32,7 +32,7 @@ export default function ListUpdatePopup({
     let returnTokenList = ''
     tokenList.map((token, index) => {
       returnTokenList += token.symbol
-      returnTokenList += index != tokenList.length - 1 ? ', ' : ''
+      returnTokenList += index !== tokenList.length - 1 ? ', ' : ''
     })
     return <span style={{ fontWeight: 800 }}>{returnTokenList}</span>
   }
