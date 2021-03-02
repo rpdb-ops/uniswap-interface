@@ -26,6 +26,13 @@ export const STAKE = new Token(
   'STAKE',
   'Stake Token on xDai'
 )
+export const AGAVE = new Token(
+  ChainId.XDAI,
+  '0x3a97704a1b25F08aa230ae53B352e2e72ef52843',
+  18,
+  'AGVE',
+  'Agave Token'
+)
 
 const WETH_ONLY: ChainTokenList = {
   [ChainId.MAINNET]: [WETH[ChainId.MAINNET]],
@@ -39,7 +46,7 @@ const WETH_ONLY: ChainTokenList = {
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   ...WETH_ONLY,
-  [ChainId.XDAI]: [...WETH_ONLY[ChainId.XDAI], XDAI_WETH, HONEY, STAKE]
+  [ChainId.XDAI]: [...WETH_ONLY[ChainId.XDAI], XDAI_WETH, HONEY, STAKE, AGAVE]
 }
 
 /**
@@ -51,13 +58,13 @@ export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: To
 // used for display in the default list when adding liquidity
 export const SUGGESTED_BASES: ChainTokenList = {
   ...WETH_ONLY,
-  [ChainId.XDAI]: [...WETH_ONLY[ChainId.XDAI], XDAI_WETH, HONEY, STAKE]
+  [ChainId.XDAI]: [...WETH_ONLY[ChainId.XDAI], XDAI_WETH, HONEY, STAKE, AGAVE]
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
 export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   ...WETH_ONLY,
-  [ChainId.XDAI]: [...WETH_ONLY[ChainId.XDAI], XDAI_WETH, HONEY, STAKE]
+  [ChainId.XDAI]: [...WETH_ONLY[ChainId.XDAI], XDAI_WETH, HONEY, STAKE, AGAVE]
 }
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {}
